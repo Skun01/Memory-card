@@ -93,7 +93,7 @@ export default function CardBoard({difficulty, setCurrentScore, currentScore, se
     setDisplayingIndex(renderCardIndex);
   }
   for(let i = 0; i < cardNumber; i++){
-    characterCards.push(<Card key= {i} order = {i} frontUrl={cardListData[i].url} name={cardListData[i].name} onFlipCard={onFlipCard}/>)
+    characterCards.push(<Card key= {i} order = {i} frontUrl={cardListData[i].url} name={cardListData[i].name} onFlipCard={onFlipCard} difficulty={difficulty}/>)
   }
 
   // handle game result
