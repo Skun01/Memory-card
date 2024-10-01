@@ -1,0 +1,32 @@
+@import url('./styles/difficulty.css');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('./assets/themify-icons/themify-icons.css');
+@import url('./styles/gameBoard.css');
+*{
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button{
+  color: inherit;
+  font-family: inherit;
+}
+html{
+  font-family: "Potta One", system-ui;
+}
+
+#root{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../public/others/background.jpg');
+  height: 100vh;
+}
+
+a{
+  color: inherit;
+  font-style: italic;
+}
+a:hover{
+  opacity: 0.8;
+}

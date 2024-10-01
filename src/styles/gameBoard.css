@@ -1,0 +1,243 @@
+.game-play{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.restart-game-logo{
+  width: 100px;
+  height: 100px;
+}
+.restart-game-logo-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.restart-game-logo-image:hover{
+  transform: scale(1.1);
+}
+
+.gameplay-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 40px 0 40px;
+  margin-bottom: 15px;
+}
+
+.score{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  background-color: #17233e;
+  color: white;
+  font-size: 22px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 8px rgba(255, 255, 255, 0.1);
+}
+
+.cardBoard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-list{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 200px;
+  height: 360px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s, box-shadow 0.3s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.card-wrapper:hover .card {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  transition: filter 0.3s;
+}
+
+.card-wrapper:hover .card-front,
+.card-wrapper:hover .card-back {
+  filter: brightness(1.1);
+}
+
+.card-name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.card-wrapper:hover .card-name {
+  transform: translateX(-50%) scale(1.1);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+/* Thêm hiệu ứng glow cho card */
+.card-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #ff00ff, #00ff00, #00ffff, #ff00ff);
+  z-index: -1;
+  filter: blur(20px);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card-wrapper:hover::after {
+  opacity: 0.7;
+}
+
+/* Các styles khác giữ nguyên */
+.flipped{
+  transform: rotateY(180deg);
+}
+
+.card-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-front{
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: transparent;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 8px rgba(255, 255, 255, 0.2);
+}
+
+.card-front-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card-name{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+}
+
+.card-back{
+  background-color: #17233e; /* Màu nền dự phòng */
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+  background-image: url('/others/backcard.jpg'); /* Đường dẫn từ thư mục public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-display{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.result-screen{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.result-screen-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+  width: 700px;
+  height: 395px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 8px rgba(124,112,150, 0.6);
+}
+
+.restart-button{
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #17233e;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.restart-button:hover{
+  transform: scale(1.1);
+}
