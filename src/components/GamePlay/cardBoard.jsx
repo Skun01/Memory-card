@@ -5,7 +5,7 @@ export default function CardBoard({difficulty, setCurrentScore, currentScore, se
   const [flipNumber, setFlipNumber] = useState(0);
   const [newCardIndex, setNewCardIndex] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]);
   const [chosenCardIndex, setChosenCardIndex] = useState([]);
-  const [cardListData, setCardListData] = useState([{}, {}, {}, {}, {}, {}]);
+  const [cardListData, setCardListData] = useState([{}, {}, {}, {}, {}, {}, ]);
   const [displayingIndex, setDisplayingIndex] = useState([]);
   const [initGame, setInitGame] = useState(false);
   // innit random card index
@@ -72,11 +72,14 @@ export default function CardBoard({difficulty, setCurrentScore, currentScore, se
     }, 1000);
   }
   function getRandomCardIndex(){
-    const randomChosenCard = Math.floor(Math.random() * Math.min(chosenCardIndex.length, cardNumber));
     const displayCardData = [];
     const renderCardIndex = [];
     const chosenIndex = [...chosenCardIndex];
     const newIndex = [...newCardIndex];
+    let randomChosenCard = 0;
+    while(randomChosenCard + newIndex.length < cardNumber){
+      randomChosenCard = Math.floor(Math.random() * Math.min(chosenCardIndex.length, cardNumber));
+    }
     for(let i = 0; i < randomChosenCard; i++){
       let randomIndex = Math.floor(Math.random() * chosenIndex.length);
       displayCardData.push(characterData[chosenIndex[randomIndex]]);
