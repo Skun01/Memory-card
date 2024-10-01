@@ -27,7 +27,7 @@ export default function GamePlay({difficulty, setDifficulty, musicStatus, setMus
         <Score score={currentScore} bestScore={bestScore}/>
       </div>
       {gameResult === "win" && <ResultScreen resultText="You Win!" backgroundUrl={winScreen} onRestartGame={onResetGameSettings} difficulty={difficulty}/>}
-      {gameResult === "lose" && <ResultScreen resultText="You Lose!" backgroundUrl={loseScreen} onRestartGame={onResetGameSettings} difficulty={difficulty}/>}
+      {gameResult === "lose" && <ResultScreen resultText="You Lose!" backgroundUrl={loseScreen} onRestartGame={onResetGameSettings}/>}
       <CardBoard difficulty={difficulty} resetGameSettings={resetGameSettings} setResetGameSettings={setResetGameSettings} currentScore={currentScore} setCurrentScore={setCurrentScore} setGameResult={setGameResult} gameResult={gameResult} bestScore={bestScore} setBestScore={setBestScore} onResetGameSettings={onResetGameSettings}/>
       <Tools musicStatus={musicStatus} setMusicStatus={setMusicStatus} audioUrl={gamingTheme}/>
     </div>
