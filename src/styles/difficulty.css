@@ -329,3 +329,62 @@ ul.instruction-display::after {
 
 #opening-music{
 }
+
+@media screen and (max-width: 1024px) {
+  .difficulty .logo {
+    width: 300px;
+  }
+
+  .difficulty-choice .title {
+    font-size: 45px;
+  }
+
+  .difficulty-button {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .difficulty .logo {
+    width: 250px;
+  }
+
+  .difficulty-choice .title {
+    font-size: 35px;
+  }
+
+  .difficulty-button-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .difficulty-button {
+    font-size: 18px;
+    padding: 5px 15px;
+  }
+
+  .instruction {
+    width: 90%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .difficulty .logo {
+    width: 200px;
+  }
+
+  .difficulty-choice .title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .difficulty-button {
+    font-size: 16px;
+  }
+
+  .instruction-line {
+    font-size: 16px;
+  }
+}

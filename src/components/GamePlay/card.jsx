@@ -1,8 +1,18 @@
 export default function Card({frontUrl, name, onFlipCard, order, isFlipped, difficulty}) {
   return(
     <div 
-      className="card-wrapper" 
-      onClick={onFlipCard} 
+      className={`card-wrapper ${difficulty.toLowerCase()}-card`} 
+      onClick={(e) => {
+        if (e.type === 'click' && e.clientX !== 0 && e.clientY !== 0) {
+          onFlipCard(e);
+        }
+      }}
+      onTouchEnd={(e) => {
+        e.preventDefault();
+        onFlipCard(e);
+      }}
+      role="button"
+      tabIndex={0}
     >
       <div className={`card ${isFlipped ? 'flipped' : ''}` } data-order={order}>
         <div className="card-front">

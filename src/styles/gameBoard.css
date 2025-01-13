@@ -241,3 +241,127 @@
 .restart-button:hover{
   transform: scale(1.1);
 }
+
+/* Màn hình tablet */
+@media screen and (max-width: 1024px) {
+  .card-wrapper {
+    width: 150px;
+    height: 270px;
+  }
+
+  .card-list {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90vw;
+  }
+
+  .gameplay-header {
+    padding: 10px 20px;
+  }
+
+  .score {
+    font-size: 18px;
+  }
+
+  .restart-game-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Màn hình mobile */
+@media screen and (max-width: 768px) {
+  .card-wrapper {
+    width: 120px;
+    height: 216px;
+  }
+
+  .card-list {
+    gap: 10px;
+  }
+
+  .card-name {
+    font-size: 16px;
+  }
+
+  .flip-display {
+    font-size: 24px;
+  }
+
+  .result-screen-content {
+    width: 90%;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .result-screen-content h1 {
+    font-size: 24px;
+  }
+
+  .restart-button {
+    font-size: 16px;
+  }
+}
+
+/* Màn hình nhỏ */
+@media screen and (max-width: 480px) {
+  .card-wrapper {
+    width: 100px;
+    height: 180px;
+  }
+
+  .gameplay-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .score {
+    font-size: 16px;
+  }
+}
+
+/* Thêm vào phần card styles */
+@media screen and (max-width: 768px) {
+  .easy-card {
+    width: 130px;
+    height: 234px;
+  }
+  
+  .medium-card {
+    width: 120px;
+    height: 216px;
+  }
+  
+  .hard-card {
+    width: 110px;
+    height: 198px;
+  }
+  
+  .impossible-card {
+    width: 100px;
+    height: 180px;
+  }
+}
+
+/* Xử lý màn hình ngang trên mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .card-wrapper {
+    width: 100px;
+    height: 180px;
+  }
+
+  .card-list {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .gameplay-header {
+    padding: 5px 20px;
+  }
+
+  .flip-display {
+    font-size: 20px;
+  }
+}
